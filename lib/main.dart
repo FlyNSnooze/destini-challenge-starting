@@ -24,7 +24,10 @@ class _StoryPageState extends State<StoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        //TODO: Step 1 - Add background.png to this Container as a background image.
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('images/background.png'), fit: BoxFit.cover),
+        ),
         padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
         constraints: BoxConstraints.expand(),
         child: SafeArea(
@@ -45,12 +48,14 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: FlatButton(
+                child: TextButton(
                   onPressed: () {
                     //Choice 1 made by user.
                     //TODO: Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.
                   },
-                  color: Colors.red,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.red,
+                  ),
                   child: Text(
                     //TODO: Step 13 - Use the storyBrain to get the text for choice 1.
                     'Choice 1',
